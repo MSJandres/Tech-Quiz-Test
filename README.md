@@ -1,145 +1,127 @@
-# 19 Testing: Tech Quiz Test Suite
-
-## Your Task
-
-Your assignment this week underscores the importance of ensuring reliability and robustness in modern web applications through comprehensive testing. In today's dynamic development environment, testing is not just an afterthought but a critical part of the development process that ensures applications meet user demands and perform efficiently under various conditions.
-
-This week, you'll take the starter codebase of a fully functioning Tech Quiz application and enhance it by adding Cypress for both component and end-to-end tests. The app was built using the MERN stack with a React front end, MongoDB database, and Node.js/Express.js server and API. It allows users to take a quiz of ten random questions and view their final score.
-
-To complete the assignment, you’ll need to do the following:
-
-1. Install Cypress as a dev dependency
-
-2. Configure Cypress for both component and end-to-end testing
-
-3. Create a component test for the quiz component
-
-4. Create an end-to-test for the quiz component
+# Tech Quiz Test Suite
 
 ## User Story
-
-```md
-AS AN aspiring developer
-I WANT to take a tech quiz
+AS AN aspiring developer<br>
+I WANT to take a tech quiz<br>
 SO THAT I can test my knowledge and improve my skills
+
+
+## Description
+Tech-Quiz is a web application that allows users to take a quiz on various technical topics. The application is built using React for the frontend and Express with MongoDB for the backend. It also includes end-to-end testing with Cypress.
+
+
+## Features
+
+- Start a quiz with random questions
+- Answer multiple-choice questions
+- View the score after completing the quiz
+- Restart the quiz to try again
+- Responsive design using Bootstrap
+- End-to-end testing with Cypress
+
+
+## Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/your-username/tech-quiz.git
+   cd tech-quiz
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm run install
+   ```
+
+3. Seed the database (optional but recommended):
+
+   ```sh
+   npm run seed
+   ```
+
+## Running the Application
+
+To start the application in development mode, run:
+
+```sh
+npm run start:dev
 ```
 
-## Acceptance Criteria
+This will start both the client and server concurrently. The client will be available at `http://localhost:3000` and the server will run on `http://localhost:3001`.
 
-```md
-GIVEN I am taking a tech quiz
-WHEN I click the start button
-THEN the quiz starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN all questions are answered
-THEN the quiz is over
-WHEN the quiz is over
-THEN I can view my score
-WHEN the quiz is over
-THEN I can start a new quiz
+## Running Tests
+
+To run Cypress tests, use the following commands:
+
+- Open Cypress test runner:
+
+  ```sh
+  npm run cy
+  ```
+
+- Run Cypress tests in headless mode:
+
+  ```sh
+  npm run test
+  ```
+
+## Project Structure
+
 ```
-
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-
-![A GIF demonstrates a functioning quiz.](./Assets/19-testing-homework-demo.gif)
-
-## Getting Started
-
-This Challenge combines many of the skills we've covered so far. In addition to the user story and acceptance criteria, we’ve provided some guidelines to help you get started.
-
-Because this Challenge requires a video submission, refer to the [Full-Stack Blog video submission guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for guidance on creating and sharing a video.
-
-**Important**: You won't need to modify code for the existing application. In this challenge, you'll only be creating tests for the existing application.
-
-Your testing should use [Cypress](https://docs.cypress.io/guides/overview/why-cypress) to run both the component tests and the end-to-end tests. The testing will be invoked using the following command:
-
-```bash
-npm run test
-```
-
-It's recommended that you start with a directory structure that looks like the following example:
-
-```md
 .
-├── client/                 // the client application
-├── cypress/                // Folder for Cypress
-    ├── component/          // Folder for component tests
-        └── Quiz.cy.jsx     // Component tests for the Quiz component
-    ├── e2e/                // Folder for end-to-end tests
-        └── quiz.cy.js      // End-to-end tests for the Tech Quiz
-    ├── fixtures/           // Folder for test fixtures
-        └── questions.json  // Mock data for testing
-    └── tsconfig.json
-├── server/                 // the server application
+├── client
+│   ├── public
+│   ├── src
+│   │   ├── assets
+│   │   ├── components
+│   │   ├── models
+│   │   ├── services
+│   │   ├── App.css
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   ├── .eslintrc.cjs
+│   ├── index.html
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   ├── vite.config.ts
+├── cypress
+│   ├── component
+│   ├── e2e
+│   ├── fixtures
+│   ├── support
+│   ├── tsconfig.json
+│   ├── cypress.config.ts
+├── server
+│   ├── src
+│   │   ├── config
+│   │   ├── controllers
+│   │   ├── models
+│   │   ├── routes
+│   │   ├── seeds
+│   │   ├── server.ts
+│   ├── .env
+│   ├── package.json
+│   ├── tsconfig.json
 ├── .gitignore
-├── cypress.config.ts       // Runs the application using imports from lib/
+├── .npmrc
 ├── package.json
+├── README.md
 ├── tsconfig.json
-└── README.md              // App description, link to video, setup and usage instructions           
+├── vite.config.d.ts
+├── vite.config.js
+├── vite.config.ts
 ```
 
-**Note**: The server for this application requires environment variables to function properly. You'll need to rename the `.env.example` file to `.env`.
 
-## Grading Requirements
+## License
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it's considered incomplete and won't count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
+This project is licensed under the MIT License.
 
-This Challenge is graded based on the following criteria:
-
-### Deliverables: 15%
-
-* Your GitHub repository must contain the application code as well as the configuration and tests using Cypress.
-
-### Walkthrough Video: 32%
-
-* A walkthrough video that demonstrates the component and end-to-end tests running and passing must be submitted.
-
-* The `README.md` file must include a link to the walkthrough video.
-
-* The walkthrough video must show all tests passing from the command line.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-### Technical Acceptance Criteria: 40%
-
-* Your submission should satisfy all of the preceding acceptance criteria in addition to the following:
-
-  * You must use the [Cypress package](https://www.npmjs.com/package/cypress).
-
-  * The application must have a component test for the quiz component.
-
-  * The application must have an end-to-end test for the quiz component.
-
-### Repository Quality: 13%
-
-* Your repository has a unique name.
-
-* Your repository follows the best practices for file structure and naming conventions.
-
-* Your repository follows the best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Your repository contains multiple descriptive commit messages.
-
-* Your repository contains a high-quality README with a description and a link to your walkthrough video.
-
-## Review
-
-You are required to submit BOTH of the following for review:
+## Demo
 
 * A walkthrough video that demonstrates the functionality of the application and the application successfully passing tests.
 
-* The URL of your GitHub repository, which should have a unique name and include a README describing the project.
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
