@@ -123,5 +123,6 @@ This project is licensed under the MIT License.
 ## Demo
 
 * A walkthrough video that demonstrates the functionality of the application and the application successfully passing tests.
+* https://drive.google.com/file/d/1oP_Mvb-wIa10X2TB8N4svDEMS61vSeot/view
 
 
